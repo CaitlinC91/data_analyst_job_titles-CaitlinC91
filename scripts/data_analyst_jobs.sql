@@ -94,13 +94,19 @@ ORDER BY avg_rating DESC;
 --American Express, Kaiser Permanente, General Motors, Nike, Unilever, Microsoft
 
 -- Find all the job titles that contain the word ‘Analyst’. How many different job titles are there?
-SELECT title
+SELECT COUNT(title)
 FROM data_analyst_jobs
-WHERE title LIKE 'Analyst%';
+WHERE title LIKE '%_nalyst%' OR title LIKE '%ANALYST%';
+	
 
---12
+--1669
 
 -- How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’? What word do these positions have in common?
+
+SELECT title
+FROM data_analyst_jobs
+WHERE title NOT LIKE '%_nalyst%' 
+	OR title NOT LIKE '%ANALYST%';
 
 -- BONUS: You want to understand which jobs requiring SQL are hard to fill. Find the number of jobs by industry (domain) that require SQL and have been posted longer than 3 weeks.
 
