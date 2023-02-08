@@ -94,7 +94,11 @@ ORDER BY avg_rating DESC;
 --American Express, Kaiser Permanente, General Motors, Nike, Unilever, Microsoft
 
 -- Find all the job titles that contain the word ‘Analyst’. How many different job titles are there?
-SELECT
+SELECT title
+FROM data_analyst_jobs
+WHERE title LIKE 'Analyst%';
+
+--12
 
 -- How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’? What word do these positions have in common?
 
