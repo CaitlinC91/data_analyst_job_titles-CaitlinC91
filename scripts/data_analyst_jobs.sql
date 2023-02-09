@@ -105,8 +105,13 @@ WHERE title LIKE '%_nalyst%' OR title LIKE '%ANALYST%';
 
 SELECT title
 FROM data_analyst_jobs
-WHERE title NOT LIKE '%_nalyst%' 
-	OR title NOT LIKE '%ANALYST%';
+WHERE title NOT LIKE '%_nalyst%'
+	AND title NOT LIKE '%ANALYST%'
+	AND title NOT LIKE '%ANALYTICS%'
+	AND title NOT LIKE '%_nalytics%';
+	
+-- 4 titles. They have "Tablaeu" in common.
+	
 
 -- BONUS: You want to understand which jobs requiring SQL are hard to fill. Find the number of jobs by industry (domain) that require SQL and have been posted longer than 3 weeks.
 
